@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Serv Joabe Menezes | Tecnologia e Manutenção Predial para Condomínios</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0B0F12',
+                            card: '#151D22',
+                            border: '#232E35',
+                            teal: '#0080A0',
+                            tealHover: '#006884',
+                            accent: '#00C2EE',
+                            lightText: '#E2E8F0'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B0F12;
+            color: #E2E8F0;
+        }
+        .teal-gradient {
+            background: linear-gradient(135deg, #0080A0 0%, #00C2EE 100%);
+        }
+        .teal-glow {
+            box-shadow: 0 0 25px rgba(0, 128, 160, 0.35);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            border-color: #0080A0;
+            box-shadow: 0 10px 30px -10px rgba(0, 128, 160, 0.3);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-teal selection:text-white">
+
+    <!-- TOP BAR INFO -->
+    <div class="bg-brand-teal/20 border-b border-brand-teal/30 py-2 text-xs md:text-sm text-gray-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-2 text-center md:text-left">
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-location-dot text-brand-accent mr-1"></i> Salvador e Região Metropolitana - BA</span>
+                <span class="hidden md:inline">|</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-clock text-brand-accent mr-1"></i> Atendimento 24/7 para Emergências</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:+557192761685" class="hover:text-brand-accent transition"><i class="fa-solid fa-phone mr-1"></i> (71) 9276-1685</a>
+                <a href="https://wa.me/557192761685" target="_blank" class="hover:text-emerald-400 transition font-semibold"><i class="fa-brands fa-whatsapp text-emerald-400 mr-1"></i> WhatsApp Direto</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-brand-dark/90 backdrop-blur-md border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- LOGO -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-full bg-brand-teal flex items-center justify-center p-2 shadow-lg group-hover:scale-105 transition-transform">
+                        <!-- Custom SVG matching logo emblem -->
+                        <svg viewBox="0 0 100 100" class="w-full h-full fill-none stroke-white" stroke-width="10">
+                            <circle cx="50" cy="50" r="38" stroke-width="8"/>
+                            <path d="M50 22 C34 22, 30 36, 30 50 C30 68, 44 78, 50 78 C50 62, 50 40, 50 40 C50 40, 64 40, 64 54 C64 64, 52 64, 50 64" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold tracking-tight text-white block leading-tight">PRIME SERV</span>
+                        <span class="text-xs text-brand-accent font-medium tracking-wider uppercase">Joabe Menezes</span>
+                    </div>
+                </a>
+
+                <!-- DESKTOP NAV -->
+                <nav class="hidden md:flex items-center space-x-8 font-medium text-sm">
+                    <a href="#inicio" class="text-white hover:text-brand-accent transition">Início</a>
+                    <a href="#servicos" class="text-gray-300 hover:text-brand-accent transition">Serviços</a>
+                    <a href="#diferenciais" class="text-gray-300 hover:text-brand-accent transition">Diferenciais</a>
+                    <a href="#simulador" class="text-gray-300 hover:text-brand-accent transition">Simulador</a>
+                    <a href="#sobre" class="text-gray-300 hover:text-brand-accent transition">Sobre</a>
+                </nav>
+
+                <!-- CTA BUTTON -->
+                <div class="hidden md:flex items-center">
+                    <a href="https://wa.me/557192761685?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20meu%20condom%C3%ADnio." 
+                       target="_blank"
+                       class="bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-xl font-semibold text-sm flex items-center gap-2 shadow-lg hover:shadow-emerald-600/30 transition-all">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Solicitar Orçamento</span>
+                    </a>
+                </div>
+
+                <!-- MOBILE MENU BUTTON -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-brand-border px-4 pt-3 pb-6 space-y-3">
+            <a href="#inicio" class="block text-gray-200 hover:text-brand-accent py-2 font-medium">Início</a>
+            <a href="#servicos" class="block text-gray-200 hover:text-brand-accent py-2 font-medium">Serviços</a>
+            <a href="#diferenciais" class="block text-gray-200 hover:text-brand-accent py-2 font-medium">Diferenciais</a>
+            <a href="#simulador" class="block text-gray-200 hover:text-brand-accent py-2 font-medium">Simulador de Pacotes</a>
+            <a href="#sobre" class="block text-gray-200 hover:text-brand-accent py-2 font-medium">Sobre</a>
+            <a href="https://wa.me/557192761685?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." 
+               target="_blank"
+               class="w-full mt-2 bg-emerald-600 text-white py-3 rounded-xl font-semibold text-center flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i> Falar no WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative py-20 lg:py-28 overflow-hidden border-b border-brand-border">
+        <!-- Background Light Effects -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-teal/15 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Text Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-teal/20 border border-brand-teal/40 text-brand-accent text-xs sm:text-sm font-semibold">
+                        <i class="fa-solid fa-shield-halved"></i> Especialistas em Condomínios em Salvador
+                    </div>
+                    
+                    <h1 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight tracking-tight">
+                        Tecnologia & Manutenção <span class="text-transparent bg-clip-text teal-gradient">Inteligente</span> para o seu Condomínio
+                    </h1>
+
+                    <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal">
+                        Garantimos segurança, eficiência operacional e valorização patrimonial com soluções completas de manutenção elétrica, hidráulica, segurança eletrônica e automação predial.
+                    </p>
+
+                    <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="https://wa.me/557192761685?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20visita%20t%C3%A9cnica%20gratuita%20para%20o%20meu%20condom%C3%ADnio." 
+                           target="_blank"
+                           class="bg-brand-teal hover:bg-brand-tealHover text-white px-8 py-4 rounded-xl font-bold text-base shadow-lg teal-glow transition-all flex items-center justify-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            Solicitar Visita Técnica Grátis
+                        </a>
+                        <a href="#servicos" class="border border-brand-border bg-brand-card/80 hover:bg-brand-border text-gray-200 px-8 py-4 rounded-xl font-semibold text-base transition-all flex items-center justify-center">
+                            Conhecer Serviços
+                        </a>
+                    </div>
+
+                    <!-- Trust Stats -->
+                    <div class="pt-8 border-t border-brand-border/60 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-bold text-white">100%</p>
+                            <p class="text-xs sm:text-sm text-gray-400">Atendimento Técnico</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-bold text-white">24/7</p>
+                            <p class="text-xs sm:text-sm text-gray-400">Suporte Emergencial</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-bold text-white">+5 Anos</p>
+                            <p class="text-xs sm:text-sm text-gray-400">De Experiência</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Graphic / Feature Box -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md bg-brand-card border border-brand-border rounded-2xl p-6 sm:p-8 shadow-2xl">
+                        <!-- Header badge -->
+                        <div class="flex items-center justify-between pb-4 border-b border-brand-border mb-6">
+                            <div class="flex items-center gap-3">
+                                <div class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></div>
+                                <span class="text-xs font-semibold text-gray-300 uppercase tracking-wider">Gestão Preventiva</span>
+                            </div>
+                            <span class="text-xs bg-brand-teal/30 text-brand-accent px-2 py-1 rounded font-mono">PRIME-SERV</span>
+                        </div>
+
+                        <!-- Card highlights -->
+                        <div class="space-y-4">
+                            <div class="p-4 bg-brand-dark/60 rounded-xl border border-brand-border/50 flex items-start gap-4">
+                                <div class="p-3 bg-brand-teal/20 text-brand-accent rounded-lg text-lg">
+                                    <i class="fa-solid fa-bolt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white text-sm">Sistemas Elétricos & Iluminação</h4>
+                                    <p class="text-xs text-gray-400 mt-1">Quadros elétricos, comandos e refletores LED com máxima economia de energia.</p>
+                                </div>
+                            </div>
+
+                            <div class="p-4 bg-brand-dark/60 rounded-xl border border-brand-border/50 flex items-start gap-4">
+                                <div class="p-3 bg-brand-teal/20 text-brand-accent rounded-lg text-lg">
+                                    <i class="fa-solid fa-camera font-bold"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white text-sm">CFTV & Controle de Acesso</h4>
+                                    <p class="text-xs text-gray-400 mt-1">Câmeras IP HD, biometria, portões rápidos e interfonia sem falhas.</p>
+                                </div>
+                            </div>
+
+                            <div class="p-4 bg-brand-dark/60 rounded-xl border border-brand-border/50 flex items-start gap-4">
+                                <div class="p-3 bg-brand-teal/20 text-brand-accent rounded-lg text-lg">
+                                    <i class="fa-solid fa-faucet-drip"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white text-sm">Bombas d'Água & Hidráulica</h4>
+                                    <p class="text-xs text-gray-400 mt-1">Automatização de recalque, limpeza preventiva e controle de pressão.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="https://wa.me/557192761685?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20planos%20para%20meu%20condom%C3%ADnio." 
+                           target="_blank"
+                           class="mt-6 w-full py-3 bg-brand-border hover:bg-brand-teal text-white rounded-xl text-center text-sm font-semibold transition-all block">
+                            Falar com Engenharia / Técnico
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="servicos" class="py-20 bg-brand-dark border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase font-bold tracking-widest text-brand-accent mb-2">Nossas Soluções</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Serviços Especializados para Condomínios</p>
+                <p class="text-gray-400 mt-4 text-sm sm:text-base">Oferecemos manutenção integrada para que síndicos e administradoras tenham total tranquilidade.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 card-hover transition-all duration-300">
+                    <div class="w-14 h-14 bg-brand-teal/20 text-brand-accent rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-plug-circle-check"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Manutenção Elétrica & LED</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        Revisão de quadros de distribuição, balanceamento de fases, substituição de refletores para iluminação LED eficiente e adequação às normas de segurança.
+                    </p>
+                    <ul class="text-xs text-gray-300 space-y-2 mb-6">
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i>Quadros elétricos e disjuntores</li>
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i>Sensores de presença e iluminação</li>
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i>Laudos técnicos e proteção contra surtos</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 card-hover transition-all duration-300">
+                    <div class="w-14 h-14 bg-brand-teal/20 text-brand-accent rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-video"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">CFTV & Segurança Eletrônica</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        Instalação e reparo de câmeras de alta definição, DVR/NVR, gravação em nuvem e monitoramento de pontos céticos do condomínio.
+                    </p>
+                    <ul class="text-xs text-gray-300 space-y-2 mb-6">
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i>Câmeras IP e visão noturna</li>
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i>Acesso remoto para síndicos</li>
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i>Cabeamento estruturado e conectividade</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 card-hover transition-all duration-300">
+                    <div class="w-14 h-14 bg-brand-teal/20 text-brand-accent rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-torii-gate"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Automação de Portões & Barreiras</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        Manutenção corretiva rápida e preventiva para motores de portões, cancelas automáticas e leitores de tags veiculares.
+                    </p>
+                    <ul class="text-xs text-gray-300 space-y-2 mb-6">
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i>Troca de placa e cremalheiras</li>
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i>Controles e tags de alta frequência</li>
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i>Sistemas antiqueda e fotocélulas</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 card-hover transition-all duration-300">
+                    <div class="w-14 h-14 bg-brand-teal/20 text-brand-accent rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-water-ladder"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Bombas d'Água & Hidráulica</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        Conserto e prevenção em bombas de água potável, águas pluviais e esgoto. Ajustes de chave boia e painéis de comando.
+                    </p>
+                    <ul class="text-xs text-gray-300 space-y-2 mb-6">
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i>Revisão de motores e vedação</li>
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i>Automatização e boias elétricas</li>
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i>Atendimento prioritário em falta d'água</li>
+                    </ul>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 card-hover transition-all duration-300">
+                    <div class="w-14 h-14 bg-brand-teal/20 text-brand-accent rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-phone-volume"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Interfonia & Controle de Acesso</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        Sistemas digitais e analógicos de comunicação entre portaria e apartamentos. Acesso por biometria, facial e senha.
+                    </p>
+                    <ul class="text-xs text-gray-300 space-y-2 mb-6">
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i>Central de interfonia e ramais</li>
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i>Fechaduras eletroímã e virtuais</li>
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i>Leitores faciais e biométricos</li>
+                    </ul>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 card-hover transition-all duration-300">
+                    <div class="w-14 h-14 bg-brand-teal/20 text-brand-accent rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Contrato Mensal de Manutenção</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        Plano sob medida para o seu condomínio com visitas periódicas preventivas, relatórios para o síndico e prioridade de chamado.
+                    </p>
+                    <ul class="text-xs text-gray-300 space-y-2 mb-6">
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i>Checklist mensal detalhado</li>
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i>Redução de custos com quebras surpresa</li>
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i>Suporte rápido em emergências</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US / DIFERENCIAIS -->
+    <section id="diferenciais" class="py-20 bg-brand-card/40 border-b border-brand-border relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <div>
+                    <h2 class="text-xs uppercase font-bold tracking-widest text-brand-accent mb-2">Por que escolher a Prime Serv?</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white mb-6">Parceria Estratégica para o Síndico e Administradora</h3>
+                    <p class="text-gray-300 mb-8 leading-relaxed">
+                        Entendemos a responsabilidade de gerir um condomínio em Salvador. Por isso, a **Prime Serv Joabe Menezes** entrega pontualidade, transparência e corpo técnico qualificado para que você não precise se preocupar.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-teal/20 text-brand-accent flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white">Agilidade de Resposta</h4>
+                                <p class="text-gray-400 text-sm mt-1">Atendimento emergencial focado na resolução rápida de problemas com portões, bombas e energia.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-teal/20 text-brand-accent flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-file-invoice font-bold"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white">Relatórios Fotográficos Transparentes</h4>
+                                <p class="text-gray-400 text-sm mt-1">Documentação completa dos serviços realizados para prestação de contas nas assembleias.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-teal/20 text-brand-accent flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-user-gear"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white">Técnicos Capacitados & Identificados</h4>
+                                <p class="text-gray-400 text-sm mt-1">Equipe uniforme, com EPIs e amplo conhecimento das especificidades prediais.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Callout Box -->
+                <div class="bg-brand-card border border-brand-teal/40 rounded-2xl p-8 relative overflow-hidden shadow-xl">
+                    <div class="absolute -right-10 -top-10 w-40 h-40 bg-brand-teal/10 rounded-full blur-2xl"></div>
+                    
+                    <span class="bg-brand-teal text-white text-xs uppercase px-3 py-1 rounded-full font-bold">Atendimento Regional</span>
+                    <h4 class="text-2xl font-bold text-white mt-4 mb-3">Atendemos Bairros e Regiões em Salvador:</h4>
+                    
+                    <div class="grid grid-cols-2 gap-3 text-sm text-gray-300 my-6">
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent text-xs"></i> Pituba / Itaigara</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent text-xs"></i> Horto Florestal</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent text-xs"></i> Caminho das Árvores</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent text-xs"></i> Graça / Vitória</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent text-xs"></i> Paralela / Alphaville</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent text-xs"></i> Imbuí / Cabula</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent text-xs"></i> Stella Maris / St. Antônio</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-accent text-xs"></i> Lauro de Freitas e Região</div>
+                    </div>
+
+                    <div class="p-4 bg-brand-dark rounded-xl border border-brand-border flex items-center justify-between">
+                        <div>
+                            <p class="text-xs text-gray-400">Seu condomínio está em outra área?</p>
+                            <p class="text-sm font-semibold text-white">Consulte nossa equipe agora</p>
+                        </div>
+                        <a href="https://wa.me/557192761685?text=Ol%C3%A1!%20Gostaria%20de%20saber%20se%20atendem%20no%20meu%20bairro." 
+                           target="_blank"
+                           class="px-4 py-2 bg-brand-teal hover:bg-brand-tealHover text-white rounded-lg text-xs font-bold transition">
+                            Consultar
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE QUOTE CALCULATOR / SIMULATOR -->
+    <section id="simulador" class="py-20 bg-brand-dark border-b border-brand-border">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-xs uppercase font-bold tracking-widest text-brand-accent mb-2">Ferramenta Interativa</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Simulador de Plano para Condomínios</h3>
+                <p class="text-gray-400 mt-2 text-sm sm:text-base">Monte um resumo de necessidades do seu prédio e envie direto para o nosso WhatsApp com 1 clique.</p>
+            </div>
+
+            <div class="bg-brand-card border border-brand-border rounded-2xl p-6 sm:p-10 shadow-2xl">
+                <form id="quote-form" class="space-y-8">
+                    
+                    <!-- Step 1: Condo Size -->
+                    <div>
+                        <label class="block text-sm font-bold text-white mb-3">1. Porte do Condomínio / Quantidade de Torres ou Unidades:</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <label class="cursor-pointer border border-brand-border bg-brand-dark p-4 rounded-xl flex items-center gap-3 hover:border-brand-teal transition">
+                                <input type="radio" name="condo_size" value="Pequeno (Até 30 Unidades)" class="accent-brand-teal" checked>
+                                <div>
+                                    <p class="text-sm font-semibold text-white">Pequeno Porte</p>
+                                    <p class="text-xs text-gray-400">Até 30 apartamentos</p>
+                                </div>
+                            </label>
+
+                            <label class="cursor-pointer border border-brand-border bg-brand-dark p-4 rounded-xl flex items-center gap-3 hover:border-brand-teal transition">
+                                <input type="radio" name="condo_size" value="Médio (31 a 80 Unidades)" class="accent-brand-teal">
+                                <div>
+                                    <p class="text-sm font-semibold text-white">Médio Porte</p>
+                                    <p class="text-xs text-gray-400">31 a 80 apartamentos</p>
+                                </div>
+                            </label>
+
+                            <label class="cursor-pointer border border-brand-border bg-brand-dark p-4 rounded-xl flex items-center gap-3 hover:border-brand-teal transition">
+                                <input type="radio" name="condo_size" value="Grande (Mais de 80 Unidades)" class="accent-brand-teal">
+                                <div>
+                                    <p class="text-sm font-semibold text-white">Grande Porte</p>
+                                    <p class="text-xs text-gray-400">Acima de 80 unidades</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Select Services -->
+                    <div>
+                        <label class="block text-sm font-bold text-white mb-3">2. Selecione os Serviços de Interesse:</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <label class="cursor-pointer border border-brand-border bg-brand-dark p-3.5 rounded-xl flex items-center gap-3 hover:border-brand-teal transition">
+                                <input type="checkbox" name="services" value="Manutenção Elétrica / LED" class="accent-brand-teal rounded" checked>
+                                <span class="text-sm text-gray-200">Manutenção Elétrica e Iluminação LED</span>
+                            </label>
+
+                            <label class="cursor-pointer border border-brand-border bg-brand-dark p-3.5 rounded-xl flex items-center gap-3 hover:border-brand-teal transition">
+                                <input type="checkbox" name="services" value="CFTV / Câmeras de Segurança" class="accent-brand-teal rounded" checked>
+                                <span class="text-sm text-gray-200">CFTV e Câmeras de Segurança</span>
+                            </label>
+
+                            <label class="cursor-pointer border border-brand-border bg-brand-dark p-3.5 rounded-xl flex items-center gap-3 hover:border-brand-teal transition">
+                                <input type="checkbox" name="services" value="Automação de Portões" class="accent-brand-teal rounded">
+                                <span class="text-sm text-gray-200">Automação e Motores de Portões</span>
+                            </label>
+
+                            <label class="cursor-pointer border border-brand-border bg-brand-dark p-3.5 rounded-xl flex items-center gap-3 hover:border-brand-teal transition">
+                                <input type="checkbox" name="services" value="Bombas d'Água e Hidráulica" class="accent-brand-teal rounded">
+                                <span class="text-sm text-gray-200">Bombas d'Água e Sistema Hidráulico</span>
+                            </label>
+
+                            <label class="cursor-pointer border border-brand-border bg-brand-dark p-3.5 rounded-xl flex items-center gap-3 hover:border-brand-teal transition">
+                                <input type="checkbox" name="services" value="Interfonia e Acesso" class="accent-brand-teal rounded">
+                                <span class="text-sm text-gray-200">Interfonia e Controle de Acesso</span>
+                            </label>
+
+                            <label class="cursor-pointer border border-brand-border bg-brand-dark p-3.5 rounded-xl flex items-center gap-3 hover:border-brand-teal transition">
+                                <input type="checkbox" name="services" value="Contrato Preventivo Mensal" class="accent-brand-teal rounded" checked>
+                                <span class="text-sm text-gray-200">Contrato de Manutenção Preventiva Mensal</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Contact Details -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1">Seu Nome / Cargo:</label>
+                            <input type="text" id="user-name" placeholder="Ex: Maria (Síndica) ou João (Zelador)" required
+                                   class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-teal">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1">Nome do Condomínio / Bairro:</label>
+                            <input type="text" id="condo-name" placeholder="Ex: Residencial Flores - Pituba" required
+                                   class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-teal">
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" 
+                            class="w-full py-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold text-base flex items-center justify-center gap-3 shadow-lg hover:shadow-emerald-600/30 transition-all">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        Enviar Simulação para WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS / DEPOIMENTOS -->
+    <section class="py-20 bg-brand-card/30 border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <h2 class="text-xs uppercase font-bold tracking-widest text-brand-accent mb-2">Avaliação dos Clientes</h2>
+                <h3 class="text-3xl font-extrabold text-white">O que dizem os Síndicos</h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-brand-card border border-brand-border p-6 rounded-2xl relative">
+                    <div class="flex text-amber-400 text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm italic mb-6">
+                        "A Prime Serv resolveu o problema do nosso sistema de interfonia e automação do portão que já durava meses. O Joabe e sua equipe são extremamente pontuais e profissionais."
+                    </p>
+                    <div>
+                        <p class="font-bold text-white text-sm">Carlos Eduardo S.</p>
+                        <p class="text-xs text-gray-400">Síndico no Itaigara</p>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-brand-card border border-brand-border p-6 rounded-2xl relative">
+                    <div class="flex text-amber-400 text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm italic mb-6">
+                        "Fechamos o contrato mensal de manutenção preventiva para a bomba de água e iluminação do condomínio. Economizamos bastante e os relatórios facilitam a apresentação na prestação de contas."
+                    </p>
+                    <div>
+                        <p class="font-bold text-white text-sm">Ana Paula M.</p>
+                        <p class="text-xs text-gray-400">Administradora de Condomínio - Pituba</p>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-brand-card border border-brand-border p-6 rounded-2xl relative">
+                    <div class="flex text-amber-400 text-sm mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm italic mb-6">
+                        "Agilidade impecável no atendimento de urgência quando tivemos um pico de energia que afetou as câmeras e o portão principal. Recomendo de olhos fechados!"
+                    </p>
+                    <div>
+                        <p class="font-bold text-white text-sm">Roberto Lima</p>
+                        <p class="text-xs text-gray-400">Conselheiro - Caminho das Árvores</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="sobre" class="py-20 bg-brand-dark border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-brand-card border border-brand-border rounded-3xl p-8 lg:p-12 grid lg:grid-cols-12 gap-8 items-center">
+                
+                <div class="lg:col-span-4 text-center">
+                    <div class="w-32 h-32 rounded-full bg-brand-teal/20 border-2 border-brand-teal mx-auto flex items-center justify-center p-4 mb-4">
+                        <svg viewBox="0 0 100 100" class="w-full h-full fill-none stroke-brand-accent" stroke-width="8">
+                            <circle cx="50" cy="50" r="38"/>
+                            <path d="M50 22 C34 22, 30 36, 30 50 C30 68, 44 78, 50 78 C50 62, 50 40, 50 40 C50 40, 64 40, 64 54 C64 64, 52 64, 50 64" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Prime Serv Joabe Menezes</h3>
+                    <p class="text-xs text-brand-accent mt-1">Ciência, Tecnologia e Engenharia Predial</p>
+                </div>
+
+                <div class="lg:col-span-8 space-y-4 text-gray-300">
+                    <h4 class="text-2xl font-bold text-white">Compromisso com a Excelência e Segurança</h4>
+                    <p class="text-sm sm:text-base leading-relaxed">
+                        A **Prime Serv** foi fundada com o propósito de elevar o padrão de manutenção predial e aplicação de tecnologia em condomínios residenciais e comerciais. Sob a liderança de **Joabe Menezes**, unimos conhecimentos técnicos avançados em engenharia, automação e eletrotécnica para entregar soluções definitivas.
+                    </p>
+                    <p class="text-sm sm:text-base leading-relaxed">
+                        Trabalhamos com transparência em orçamentos, cumprimento rigoroso de prazos e foco contínuo na prevenção de acidentes e falhas estruturais nos equipamentos do seu edifício.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-brand-border">
+                
+                <!-- Col 1 -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-teal flex items-center justify-center p-2">
+                            <svg viewBox="0 0 100 100" class="w-full h-full fill-none stroke-white" stroke-width="10">
+                                <circle cx="50" cy="50" r="38"/>
+                                <path d="M50 22 C34 22, 30 36, 30 50 C30 68, 44 78, 50 78 C50 62, 50 40, 50 40 C50 40, 64 40, 64 54 C64 64, 52 64, 50 64"/>
+                            </svg>
+                        </div>
+                        <span class="text-lg font-bold text-white">PRIME SERV</span>
+                    </div>
+                    <p class="text-xs text-gray-400">
+                        Tecnologia e manutenção especializada para condomínios residenciais e comerciais em Salvador e região.
+                    </p>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h5 class="text-sm font-bold text-white mb-4">Navegação</h5>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#inicio" class="hover:text-brand-accent transition">Início</a></li>
+                        <li><a href="#servicos" class="hover:text-brand-accent transition">Serviços Prediais</a></li>
+                        <li><a href="#diferenciais" class="hover:text-brand-accent transition">Diferenciais</a></li>
+                        <li><a href="#simulador" class="hover:text-brand-accent transition">Simulador de Orçamento</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h5 class="text-sm font-bold text-white mb-4">Serviços</h5>
+                    <ul class="space-y-2 text-xs">
+                        <li>Manutenção Elétrica & Iluminação</li>
+                        <li>CFTV & Câmeras IP</li>
+                        <li>Automação de Portões</li>
+                        <li>Bombas d'Água</li>
+                        <li>Interfonia & Fechaduras</li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h5 class="text-sm font-bold text-white mb-4">Contato</h5>
+                    <ul class="space-y-3 text-xs">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-brand-accent"></i>
+                            <a href="tel:+557192761685" class="hover:text-white">+55 71 9276-1685</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                            <a href="https://wa.me/557192761685" target="_blank" class="hover:text-white">WhatsApp Direct (71) 9276-1685</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-brand-accent"></i>
+                            <span>Salvador, Bahia - Brasil</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 gap-4">
+                <p>&copy; Prime Serv Joabe Menezes - Todos os direitos reservados.</p>
+                <p>Ciência, Tecnologia e Engenharia Predial</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/557192761685?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20manuten%C3%A7%C3%A3o%20para%20meu%20condom%C3%ADnio." 
+       target="_blank"
+       aria-label="Atendimento via WhatsApp"
+       class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-400 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close Mobile Menu on Link Click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Interactive Quote Calculator Form Handling
+        const quoteForm = document.getElementById('quote-form');
+        
+        quoteForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get selected condo size
+            const sizeRadio = document.querySelector('input[name="condo_size"]:checked');
+            const condoSize = sizeRadio ? sizeRadio.value : 'Não informado';
+
+            // Get selected services
+            const selectedServices = [];
+            document.querySelectorAll('input[name="services"]:checked').forEach(checkbox => {
+                selectedServices.push(checkbox.value);
+            });
+
+            const userName = document.getElementById('user-name').value;
+            const condoName = document.getElementById('condo-name').value;
+
+            const servicesText = selectedServices.length > 0 
+                ? selectedServices.map(s => `• ${s}`).join('%0A') 
+                : '• NENHUM SERVIÇO ESPECÍFICO SELECIONADO';
+
+            // Construct WhatsApp Message
+            const whatsappMessage = `*SOLICITAÇÃO DE ORÇAMENTO / SIMULAÇÃO DE MANUTENÇÃO*%0A%0A` +
+                `*Nome:* ${encodeURIComponent(userName)}%0A` +
+                `*Condomínio/Bairro:* ${encodeURIComponent(condoName)}%0A` +
+                `*Porte do Condomínio:* ${encodeURIComponent(condoSize)}%0A%0A` +
+                `*Serviços Desejados:*%0A${servicesText}%0A%0A` +
+                `Olá Joabe, gostaria de receber uma proposta/visita técnica para o meu condomínio!`;
+
+            // Open WhatsApp in new tab
+            const targetPhone = '557192761685';
+            window.open(`https://wa.me/${targetPhone}?text=${whatsappMessage}`, '_blank');
+        });
+    </script>
+</body>
+</html>
